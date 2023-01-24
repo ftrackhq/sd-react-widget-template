@@ -1,3 +1,6 @@
+<!---
+Change the name as appropriate...
+-->
 # Widget’s Name
 <!---
 Provide a short description of the widget and high level functionality.>
@@ -20,6 +23,9 @@ Provide an image to sum up the tool.
 
 
 ### Who is this for
+<!---
+Check [x] as needed
+-->
 - [x] Production Management / Project Management
 - [ ] Artist / Designer
 - [ ] Supervisor / Lead
@@ -28,7 +34,6 @@ Provide an image to sum up the tool.
 
 ## Functionalities
 <!---
-
 * To describe
 * The  basic
 * Functionalities
@@ -42,7 +47,7 @@ Provide an image to sum up the tool.
 # ftrack scope
 
 <!---
-Check one or Both options depending on the widgets type.
+Check [x] one or Both options depending on the widgets type.
 -->
 
 - [ ] **Overview Widget** : *Widget should be installed as Overview widget.  Provides cross project data manipulation.*
@@ -103,6 +108,31 @@ Whether you are using [nginx](https://www.nginx.com/) or [apache](https://httpd.
 is to copy the content of the build folder in the main location folder.
 
 ### Serving with node
+If you want to use node to serve the code you'll have first to install [serve](https://www.npmjs.com/package/serve) with:
+
+> npm install serve
+
+Once serve is installed , you can run the code with :
+
+> serve dist
+
+Once started should be reporting :
+
+```
+   ┌──────────────────────────────────────────┐
+   │                                          │
+   │   Serving!                               │
+   │                                          │
+   │   - Local:    http://localhost:3000      │
+   │   - Network:  http://192.168.1.60:3000   │
+   │                                          │
+   │   Copied local address to clipboard!     │
+   │                                          │
+   └──────────────────────────────────────────┘
+```
+
+> **Note**
+> For performance and security reason is suggested to run the widget with ssl and behind a reverse proxy.
 
 
 ### Dependencies
@@ -110,3 +140,5 @@ is to copy the content of the build folder in the main location folder.
 
 # Note
 The template code has been bootstrapped from a [vite](https://vitejs.dev/guide/) application.
+
+&copy; ftrack
