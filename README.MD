@@ -6,7 +6,7 @@ Change the name as appropriate...
 Provide a short description of the widget and high level functionality.>
 -->
 
-> **Disclaimer**
+> **Warning**
 > Due to the required ftrack credentials this widget does not work as standalone, but only from within ftrack.
 
 ## Demo
@@ -93,6 +93,9 @@ This should result in npm reporting to which port the code is available:
  ➜  press h to show help
 ```
 
+You can now use the address exposed to load the widget in ftrack .
+
+
 ## Deploy
 Depending on your infrastructure, there might be various ways to deploy the code in production.
 But first you'll need to build the code for release with:
@@ -133,6 +136,10 @@ Once started should be reporting :
 
 > **Note**
 > For performance and security reason is suggested to run the widget with ssl and behind a reverse proxy.
+
+### Installing
+
+Open http://localhost:3000 into a ftrack project's dashboard view. Ensure to inject the credentials or it won't work.
 
 
 ### Dependencies
