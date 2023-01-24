@@ -1,48 +1,55 @@
 # Widget’s Name
-
-Provide a short description of the widget and high level functionality.
+<!---
+Provide a short description of the widget and high level functionality.>
+-->
 
 > **Disclaimer**
 > Due to the required ftrack credentials this widget does not work as standalone, but only from within ftrack.
 
-## Demo 
+## Demo
+<!---
 Provide an online [link](http://www.example.com) if available.
+-->
 
+## Example
+<!---
+Provide an image to sum up the tool.
+-->
 
 ![Example result](images/thumbnail.png)
 
 
 ### Who is this for
-- [ ] Production Management / Project Management
+- [x] Production Management / Project Management
 - [ ] Artist / Designer
 - [ ] Supervisor / Lead
 - [ ] Developer / TD / Engineer
 - [ ] Executive / Studio Head 
 
 ## Functionalities
-* bullet point
+<!---
+
 * To describe
 * The  basic
 * Functionalities
 * And what to expect
 * From this code 
+-->
+
+* One feature
 
 
 # ftrack scope
 
-    Describe the moving part of this solution.
-    One or more can be selected at once.
-    Web Widgets
+<!---
+Check one or Both options depending on the widgets type.
+-->
+
+- [ ] **Overview Widget** : *Widget should be installed as Overview widget.  Provides cross project data manipulation.*
+- [ ] **Dashboard Widget**: *Widget should be installed as Dashboard widget.  Provides single Entity type data manipulation.*
 
 
-## Overview Widget
-Widget should be installed as an overview widget.
-Provides cross project data manipulation.
-
-
-## Dashboard Widget
-Widget should be installed as a Dashboard widget.
-Provides single Entity type data manipulation.
+## 
 
 # Code Language
 * Javascript
@@ -69,11 +76,11 @@ Describe the process for testing the code.
 Describe the process to deploy the code in production.
 
 ### Dependencies
-A list of clickable
-Dependencies
-Used by the recipes
-Excluded the basic ones 
-Such as the language
+* A list of clickable
+* Dependencies
+* Used by the recipes
+* Excluded the basic ones 
+* Such as the language
 
 
 
