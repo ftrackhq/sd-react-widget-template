@@ -1,3 +1,5 @@
+// :copyright: Copyright (c) 2023 ftrack
+
 import React from 'react';
 import { Session } from "@ftrack/api";
 import { SessionProvider } from "./session_context";

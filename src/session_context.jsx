@@ -1,3 +1,5 @@
+// :copyright: Copyright (c) 2023 ftrack
+
 import { createContext, useContext } from "react";
 
 const SessionContext = createContext(null);

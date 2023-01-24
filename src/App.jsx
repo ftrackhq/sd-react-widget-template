@@ -1,3 +1,5 @@
+// :copyright: Copyright (c) 2023 ftrack
+
 import {useEffect, useState} from 'react';
 import { getEntity  } from "@ftrack/web-widget";
 import useSession from "./session_context";
