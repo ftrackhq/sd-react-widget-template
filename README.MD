@@ -139,11 +139,11 @@ Once started should be reporting :
 
 ### Installing
 
-Open http://localhost:3000 into a ftrack project's dashboard view. Ensure to inject the credentials or it won't work.
+Open [the above address](http://localhost:3000) into a ftrack project's dashboard view. Ensure to inject the credentials or it won't work.
 
 
 ### Dependencies
-* A list of [clickable](www.example.com) Dependencies
+* A list of [clickable](http://www.example.com) Dependencies
 
 # Note
 The template code has been bootstrapped from a [vite](https://vitejs.dev/guide/) application.
