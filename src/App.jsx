@@ -4,6 +4,7 @@ import {useEffect, useState} from 'react';
 import { getEntity  } from "@ftrack/web-widget";
 import useSession from "./session_context";
 import {SETTINGS} from './config'
+import logo from './assets/ftrack-studio-logo-dark.png';
 
 import './App.css'
 
@@ -24,6 +25,12 @@ function App() {
       window.addEventListener('ftrackWidgetUpdate', onFtrackWidgetUpdate);
   }, [session])
 
+
+    return (
+        <div>
+            <img src={logo} className="App-logo" alt="logo" />
+        </div>
+    )
 }
 
 export default App;
