@@ -137,6 +137,14 @@ Once started should be reporting :
 > **Note**
 > For performance and security reason is suggested to run the widget with ssl and behind a reverse proxy.
 
+### To github pages
+[Enable github pages](https://docs.github.com/en/pages/quickstart) on the project.
+Modify the [vite.config.js](./vite.config.js) **base** variable with the repository name.
+The [deployment action](./.github/workflows/deploy.yaml) will run on the **main** branch.
+Once the deployment process is done ,the widget will be reachable at https://ftrackhq.github.io/<widget-name>
+
+
+
 ### Installing
 
 Open [the above address](http://localhost:3000) into a ftrack project's dashboard view. Ensure to inject the credentials or it won't work.
