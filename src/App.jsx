@@ -8,6 +8,7 @@ import logo_dark from './assets/ftrack-studio-logo-dark.png';
 import logo_light from './assets/ftrack-studio-logo-light.png';
 
 import { ThreeCircles } from  'react-loader-spinner'
+import loadStyleSheet from "./stylesheet.jsx";
 
 import './App.css'
 import Welcome from './components/Welcome.jsx'
@@ -16,14 +17,6 @@ function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function loadStyleSheet(theme){
-    var head = document.getElementsByTagName('head')[0];
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.type = 'text/css';
-    link.href = '/style-' + theme + '.css';
-    head.appendChild(link);
-}
 
 function App() {
   const session = useSession();
