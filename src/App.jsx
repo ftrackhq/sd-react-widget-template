@@ -10,25 +10,28 @@ import { ThreeCircles } from  'react-loader-spinner'
 import './App.css'
 import Welcome from './components/Welcome.jsx'
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 function loadStyleSheet(theme){
     var head = document.getElementsByTagName('head')[0];
     var link = document.createElement('link');
     link.rel = 'stylesheet';
     link.type = 'text/css';
     link.href = '/style-' + theme + '.css';
-    console.log(link)
     head.appendChild(link);
 }
 
 function App() {
+  const settings = SETTINGS
   const session = useSession();
   let current_entity = getEntity();
   const theme = getActiveTheme()
   loadStyleSheet(theme)
 
   const [selection, setSelection] = useState(current_entity);
-  const [isLoading, setIsLoading] = useState(false);
-
+  const [isLoading, setLoading] = useState(false);
 
   function onFtrackWidgetUpdate(ftrack_event){
       console.log(`Selection changed to type:  ${ftrack_event.detail.entity.type} with id : ${ftrack_event.detail.entity.id}.`)
@@ -36,10 +39,12 @@ function App() {
   }
 
   useEffect(()=>{
-      setIsLoading(true)
+      setLoading(true)
       window.addEventListener('ftrackWidgetUpdate', onFtrackWidgetUpdate);
-      setIsLoading(false)
-  }, [session, selection])
+      sleep(4000).then(() => { console.log("Working on something !"); });
+      setLoading(false)
+
+  }, [session])
 
     const render_widget = (
         <div>
