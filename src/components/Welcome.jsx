@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+// :copyright: Copyright (c) 2023 ftrack
 
 function Welcome(props) {
     const session = props.session
