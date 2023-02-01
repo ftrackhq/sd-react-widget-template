@@ -10,9 +10,6 @@ import { ThreeCircles } from  'react-loader-spinner'
 import './App.css'
 import Welcome from './components/Welcome.jsx'
 
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
 
 function loadStyleSheet(theme){
     var head = document.getElementsByTagName('head')[0];
@@ -41,7 +38,6 @@ function App() {
   useEffect(()=>{
       setLoading(true)
       window.addEventListener('ftrackWidgetUpdate', onFtrackWidgetUpdate);
-      sleep(4000).then(() => { console.log("Working on something !"); });
       setLoading(false)
 
   }, [session])
