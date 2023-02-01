@@ -4,7 +4,9 @@ import {useEffect, useState} from 'react';
 import { getEntity , getActiveTheme } from "@ftrack/web-widget";
 import useSession from "./session_context";
 import {SETTINGS} from './config'
-import logo from './assets/ftrack-studio-logo-dark.png';
+import logo_dark from './assets/ftrack-studio-logo-dark.png';
+import logo_light from './assets/ftrack-studio-logo-light.png';
+
 import { ThreeCircles } from  'react-loader-spinner'
 
 import './App.css'
@@ -28,6 +30,8 @@ function App() {
   const session = useSession();
   let current_entity = getEntity();
   const theme = getActiveTheme()
+  const logo = ((theme === 'light') ? logo_dark : logo_light)
+
   loadStyleSheet(theme)
 
   const [selection, setSelection] = useState(current_entity);

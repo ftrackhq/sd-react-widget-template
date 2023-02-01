@@ -1,3 +1,7 @@
+.welcome {
+    color: black;
+}
+
 .spinner {
     display: flex;
     justify-content: center;
