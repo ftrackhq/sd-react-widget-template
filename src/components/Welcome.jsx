@@ -13,7 +13,7 @@ function Welcome(props) {
 
     return (
         <div className="welcome">
-            <img src={logo} />
+            <img className="logo" src={logo} />
             <h2 onClick={() => onEntityClick(selection)}> {selection.name}[{selection.__entity_type__}] with id {selection.id}</h2>
             <h3>Theme : {theme}</h3>
             <hr/>
