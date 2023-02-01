@@ -41,8 +41,11 @@ function App() {
   useEffect(()=>{
       setLoading(true)
       window.addEventListener('ftrackWidgetUpdate', onFtrackWidgetUpdate);
+
       // FOR SPINNER DEMO PURPOSES ONLY
-      sleep(SETTINGS.spinner_timeout).then(() => { setLoading(false); });
+      sleep(SETTINGS.spinner_timeout).then(() => {
+          setLoading(false);
+      });
 
   }, [session])
 
@@ -51,6 +54,12 @@ function App() {
             <Welcome session={session} theme={theme} selection={selection} logo={logo}/>
         </div>
     )
+
+    function printEvent(event) {
+      console.log(event)
+    }
+
+    session.eventHub.subscribe('topic=ftrack.update', printEvent)
 
     return (
         <div>
