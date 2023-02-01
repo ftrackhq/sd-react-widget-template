@@ -30,9 +30,11 @@ function App() {
   const [isLoading, setLoading] = useState(false);
 
   function onFtrackWidgetUpdate(ftrack_event){
-      console.log(`Selection changed to type:  ${ftrack_event.detail.entity.type} with id : ${ftrack_event.detail.entity.id}.`)
+      session.query(`select name, type from ${ftrack_event.detail.entity.type} where id is ${ftrack_event.detail.entity.id}`).then((entity)=>{
+          const f_entity = entity.data[0]
+          setSelection(f_entity)
+      })
 
-      setSelection(ftrack_event.detail.entity)
   }
 
   useEffect(()=>{
