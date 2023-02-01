@@ -15,7 +15,7 @@ function Welcome(props) {
     return (
         <div className="welcome">
             <img className="logo" src={logo} />
-            {/*<img src={selection.thumbnail_url.url || defaultThumbnail(session)}/>*/}
+            <img src={selection.thumbnail_url.url || defaultThumbnail(session)}/>
             <hr/>
             <button onClick={
                 () => onEntityClick(selection)} >{selection.name}[{selection.__entity_type__}] with id {selection.id}</button>

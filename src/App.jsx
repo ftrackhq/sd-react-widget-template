@@ -8,7 +8,7 @@ import logo_dark from './assets/ftrack-studio-logo-dark.png';
 import logo_light from './assets/ftrack-studio-logo-light.png';
 
 import { ThreeCircles } from  'react-loader-spinner'
-import { loadStyleSheet } from "./stylesheet.jsx";
+import {defaultThumbnail, loadStyleSheet} from "./stylesheet.jsx";
 import Welcome from './components/Welcome.jsx'
 
 import './App.css'
@@ -26,7 +26,7 @@ function App() {
 
   loadStyleSheet(theme)
 
-  const [selection, setSelection] = useState(current_entity);
+  const [selection, setSelection] = useState({thumbnail_url:defaultThumbnail(session), id:'', __entity_type__:''});
   const [isLoading, setLoading] = useState(false);
 
   function onFtrackWidgetUpdate(ftrack_event){
@@ -48,7 +48,7 @@ function App() {
           setLoading(false);
       });
 
-  }, [])
+  }, [selection])
 
     const render_widget = (
         <div>
