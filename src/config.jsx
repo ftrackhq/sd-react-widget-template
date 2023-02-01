@@ -1,3 +1,3 @@
 // :copyright: Copyright (c) 2023 ftrack
 
-export const SETTINGS = {}
+export const SETTINGS = {spinner_timeout: 1000}

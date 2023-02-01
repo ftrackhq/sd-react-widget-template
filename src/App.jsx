@@ -26,7 +26,6 @@ function loadStyleSheet(theme){
 }
 
 function App() {
-  const settings = SETTINGS
   const session = useSession();
   let current_entity = getEntity();
   const theme = getActiveTheme()
@@ -47,7 +46,7 @@ function App() {
       setLoading(true)
       window.addEventListener('ftrackWidgetUpdate', onFtrackWidgetUpdate);
     // FOR SPINNER DEMO PURPOSES ONLY
-      sleep(1000).then(() => { setLoading(false); });
+      sleep(SETTINGS.spinner_timeout).then(() => { setLoading(false); });
 
   }, [session, selection])
 
