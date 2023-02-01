@@ -8,7 +8,7 @@ import logo_dark from './assets/ftrack-studio-logo-dark.png';
 import logo_light from './assets/ftrack-studio-logo-light.png';
 
 import { ThreeCircles } from  'react-loader-spinner'
-import loadStyleSheet from "./stylesheet.jsx";
+import { loadStyleSheet } from "./stylesheet.jsx";
 import Welcome from './components/Welcome.jsx'
 
 import './App.css'
@@ -30,7 +30,7 @@ function App() {
   const [isLoading, setLoading] = useState(false);
 
   function onFtrackWidgetUpdate(ftrack_event){
-      const entity_query = `select name, id from ${ftrack_event.detail.entity.type} where id is ${ftrack_event.detail.entity.id}`
+      const entity_query = `select thumbnail_url, name, id from ${ftrack_event.detail.entity.type} where id is ${ftrack_event.detail.entity.id}`
       session.query(entity_query).then((entity)=>{
           const f_entity = entity.data[0]
           setSelection(f_entity)
@@ -56,7 +56,7 @@ function App() {
     )
 
     function printEvent(event) {
-      console.log(event)
+      console.info(event)
     }
 
     session.eventHub.subscribe('topic=ftrack.update', printEvent)

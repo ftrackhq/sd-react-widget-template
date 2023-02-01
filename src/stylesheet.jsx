@@ -6,7 +6,12 @@ function loadStyleSheet(theme){
     link.rel = 'stylesheet';
     link.type = 'text/css';
     link.href = '/style-' + theme + '.css';
+    console.log(link)
     head.appendChild(link);
 }
 
-export default loadStyleSheet
+function defaultThumbnail(session){
+    return `${session.serverUrl}/img/thumbnail2.png`
+}
+
+export { loadStyleSheet, defaultThumbnail }
