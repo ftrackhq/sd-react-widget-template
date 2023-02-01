@@ -30,7 +30,8 @@ function App() {
   const [isLoading, setLoading] = useState(false);
 
   function onFtrackWidgetUpdate(ftrack_event){
-      session.query(`select name, type from ${ftrack_event.detail.entity.type} where id is ${ftrack_event.detail.entity.id}`).then((entity)=>{
+      const entity_query = `select name, id from ${ftrack_event.detail.entity.type} where id is ${ftrack_event.detail.entity.id}`
+      session.query(entity_query).then((entity)=>{
           const f_entity = entity.data[0]
           setSelection(f_entity)
       })
@@ -43,7 +44,7 @@ function App() {
       // FOR SPINNER DEMO PURPOSES ONLY
       sleep(SETTINGS.spinner_timeout).then(() => { setLoading(false); });
 
-  }, [selection])
+  }, [session])
 
     const render_widget = (
         <div>

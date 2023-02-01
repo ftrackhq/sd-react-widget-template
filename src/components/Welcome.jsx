@@ -1,4 +1,5 @@
 // :copyright: Copyright (c) 2023 ftrack
+import { openSidebar } from "@ftrack/web-widget";
 
 function Welcome(props) {
     const session = props.session
@@ -6,11 +7,15 @@ function Welcome(props) {
     const selection = props.selection
     const logo = props.logo
 
+    function onEntityClick(selection) {
+        openSidebar(selection.__entity_type__, selection.id)
+    }
+
     return (
         <div className="welcome">
             <img src={logo} />
+            <h2 onClick={() => onEntityClick(selection)}> {selection.name}[{selection.__entity_type__}] with id {selection.id}</h2>
             <h3>Theme : {theme}</h3>
-            <h3>Selection : {selection.__entity_type__} : {selection.id} </h3>
             <hr/>
             <h3>Instance : {session.serverUrl}</h3>
             <h3>Server Version : {session.serverVersion }</h3>
