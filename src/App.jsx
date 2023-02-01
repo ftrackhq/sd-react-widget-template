@@ -48,7 +48,7 @@ function App() {
     // FOR SPINNER DEMO PURPOSES ONLY
       sleep(SETTINGS.spinner_timeout).then(() => { setLoading(false); });
 
-  }, [session, selection])
+  }, [selection])
 
     const render_widget = (
         <div>
