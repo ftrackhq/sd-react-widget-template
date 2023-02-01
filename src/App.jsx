@@ -30,6 +30,7 @@ function App() {
   const [isLoading, setLoading] = useState(false);
 
   function onFtrackWidgetUpdate(ftrack_event){
+      console.log(ftrack_event)
       const entity_query = `select thumbnail_url, name, id from ${ftrack_event.detail.entity.type} where id is ${ftrack_event.detail.entity.id}`
       session.query(entity_query).then((entity)=>{
           const f_entity = entity.data[0]
@@ -47,19 +48,13 @@ function App() {
           setLoading(false);
       });
 
-  }, [session])
+  }, [])
 
     const render_widget = (
         <div>
             <Welcome session={session} theme={theme} selection={selection} logo={logo}/>
         </div>
     )
-
-    function printEvent(event) {
-      console.info(event)
-    }
-
-    session.eventHub.subscribe('topic=ftrack.update', printEvent)
 
     return (
         <div>
