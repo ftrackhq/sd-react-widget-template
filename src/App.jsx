@@ -9,9 +9,9 @@ import logo_light from './assets/ftrack-studio-logo-light.png';
 
 import { ThreeCircles } from  'react-loader-spinner'
 import loadStyleSheet from "./stylesheet.jsx";
+import Welcome from './components/Welcome.jsx'
 
 import './App.css'
-import Welcome from './components/Welcome.jsx'
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
@@ -38,7 +38,7 @@ function App() {
   useEffect(()=>{
       setLoading(true)
       window.addEventListener('ftrackWidgetUpdate', onFtrackWidgetUpdate);
-    // FOR SPINNER DEMO PURPOSES ONLY
+      // FOR SPINNER DEMO PURPOSES ONLY
       sleep(SETTINGS.spinner_timeout).then(() => { setLoading(false); });
 
   }, [selection])
