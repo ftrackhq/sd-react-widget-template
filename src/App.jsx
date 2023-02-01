@@ -10,6 +10,9 @@ import { ThreeCircles } from  'react-loader-spinner'
 import './App.css'
 import Welcome from './components/Welcome.jsx'
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 function loadStyleSheet(theme){
     var head = document.getElementsByTagName('head')[0];
@@ -32,15 +35,17 @@ function App() {
 
   function onFtrackWidgetUpdate(ftrack_event){
       console.log(`Selection changed to type:  ${ftrack_event.detail.entity.type} with id : ${ftrack_event.detail.entity.id}.`)
+
       setSelection(ftrack_event.detail.entity)
   }
 
   useEffect(()=>{
       setLoading(true)
       window.addEventListener('ftrackWidgetUpdate', onFtrackWidgetUpdate);
-      setLoading(false)
+    // FOR SPINNER DEMO PURPOSES ONLY
+      sleep(1000).then(() => { setLoading(false); });
 
-  }, [session])
+  }, [session, selection])
 
     const render_widget = (
         <div>
