@@ -15,14 +15,14 @@ function Welcome(props) {
     return (
         <div className="welcome">
             <img className="logo" src={logo} />
-            {/*<img src={selection.thumbnail_url.url || defaultThumbnail(session)}/>*/}
+            <img src={selection.thumbnail_url.url || defaultThumbnail(session)}/>
             <hr/>
             <button onClick={
                 () => onEntityClick(selection)} >{selection.name}[{selection.__entity_type__}] with id {selection.id}</button>
             <hr/>
             <h3>Instance : {session.serverUrl}</h3>
             <h3>Server Version : {session.serverVersion }</h3>
-            <h3>Event Hub Cobbected: {session.eventHub.isConnected()}</h3>
+            <h3>Event Hub Connected: {session.eventHub.isConnected().toString()}</h3>
             <h3>Server Storage: {session.serverInformation.storage_scenario.data.location_name}</h3>
             <h3>User : {session.apiUser}</h3>
             <h3>Theme : {theme}</h3>
