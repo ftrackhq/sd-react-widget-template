@@ -145,8 +145,10 @@ Open [the above address](http://localhost:3000) into a ftrack project's dashboar
 
 
 ### Dependencies
-* A list of [clickable](http://www.example.com) Dependencies
-
+- [ftrack/api](https://github.com/ftrackhq/ftrack-javascript)
+- [ftrack/web-widget](https://github.com/ftrackhq/ftrack-web-widget)
+- [react-load-spinner](https://www.npmjs.com/package/react-loader-spinner)
+- [Ad more...](https://example.com)
 # Note
 The template code has been bootstrapped from a [vite](https://vitejs.dev/guide/) application.
 
