@@ -88,7 +88,7 @@ This should result in npm reporting to which port the code is available:
 
 ```
  VITE v4.0.4  ready in 581 ms
- ➜  Local:   http://localhost:5173/
+ ➜  Local:   http://localhost:3000/
  ➜  Network: use --host to expose
  ➜  press h to show help
 ```
@@ -127,7 +127,7 @@ Once started should be reporting :
    │   Serving!                               │
    │                                          │
    │   - Local:    http://localhost:3000      │
-   │   - Network:  http://192.168.1.60:3000   │
+   │   - Network:  http://192.168.1.2:3000   │
    │                                          │
    │   Copied local address to clipboard!     │
    │                                          │
