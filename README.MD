@@ -42,6 +42,7 @@ Check [x] as needed
 -->
 
 * One feature
+* Or More...
 
 
 # ftrack scope
@@ -127,7 +128,7 @@ Once started should be reporting :
    │   Serving!                               │
    │                                          │
    │   - Local:    http://localhost:3000      │
-   │   - Network:  http://192.168.1.2:3000   │
+   │   - Network:  http://192.168.1.2:3000    │
    │                                          │
    │   Copied local address to clipboard!     │
    │                                          │
