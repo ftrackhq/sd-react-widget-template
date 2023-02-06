@@ -48,7 +48,7 @@ function App() {
           setLoading(false);
       });
 
-  }, [selection])
+  }, [session])
 
     const render_widget = (
         <div>
