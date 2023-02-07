@@ -6,7 +6,6 @@ function loadStyleSheet(theme){
     link.rel = 'stylesheet';
     link.type = 'text/css';
     link.href = import.meta.env.BASE_URL + 'style-' + theme + '.css';
-    // console.log(link)
     head.appendChild(link);
 }
 
