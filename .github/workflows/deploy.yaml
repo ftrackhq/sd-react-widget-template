@@ -1,5 +1,12 @@
+name: GCS deployment
+on:
+  push:
+    branches:
+      - main
+      - backlog/init-react-template
 jobs:
   job_id:
+    runs-on: ubuntu-latest
     permissions:
       contents: 'read'
       id-token: 'write'
