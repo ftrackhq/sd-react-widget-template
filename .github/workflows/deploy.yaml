@@ -1,0 +1,22 @@
+name: S3 Widget Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  job_id:
+    permissions:
+      contents: 'read'
+      id-token: 'write'
+
+    steps:
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v1'
+      with:
+        credentials_json: '${{ secrets.GOOGLE_CREDENTIALS }}'
+
+    - id: 'upload-folder'
+      uses: 'google-github-actions/upload-cloud-storage@v1'
+      with:
+        path: 'dist'
+        destination: 'sd-public-widget-deployment/${{ github.event.repository.name }}'
