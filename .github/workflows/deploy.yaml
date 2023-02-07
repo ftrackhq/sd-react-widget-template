@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - backlog/init-react-template
 jobs:
   job_id:
     permissions:
