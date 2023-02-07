@@ -11,3 +11,8 @@
   height: 15em;
   padding: 0.0em;
 }
+
+.warning {
+  color: red;
+  font-weight: bold;
+}

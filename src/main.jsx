@@ -11,7 +11,6 @@ import App from './App';
 
 function onWidgetLoad() {
   const credentials = getCredentials();
-
   const session = new Session(
     credentials.serverUrl,
     credentials.apiUser,

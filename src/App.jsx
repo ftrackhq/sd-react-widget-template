@@ -8,7 +8,7 @@ import logo_dark from './assets/ftrack-studio-logo-dark.png';
 import logo_light from './assets/ftrack-studio-logo-light.png';
 
 import { ThreeCircles } from  'react-loader-spinner'
-import {defaultThumbnail, loadStyleSheet} from "./stylesheet.jsx";
+import {defaultThumbnail, loadStyleSheet, isOverview} from "./ftrack_utils.jsx";
 import Welcome from './components/Welcome.jsx'
 
 import './App.css'
@@ -19,6 +19,11 @@ function sleep(ms) {
 
 
 function App() {
+  const is_overview = isOverview()
+  if (is_overview){
+      return <h1 className="warning">Please install this widget as project dashboard</h1>
+  }
+
   const session = useSession();
   let current_entity = getEntity();
   const theme = getActiveTheme()

@@ -1,6 +1,6 @@
 // :copyright: Copyright (c) 2023 ftrack
 import { openSidebar } from "@ftrack/web-widget";
-import { defaultThumbnail } from "../stylesheet"
+import { defaultThumbnail } from "../ftrack_utils.jsx"
 
 function Welcome(props) {
     const session = props.session

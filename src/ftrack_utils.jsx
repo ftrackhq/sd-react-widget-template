@@ -14,4 +14,9 @@ function defaultThumbnail(session){
     return `${session.serverUrl}/img/thumbnail2.png`
 }
 
-export { loadStyleSheet, defaultThumbnail }
+function isOverview(){
+    const hash = new URLSearchParams(window.location.hash.substring(8))
+    return hash.has('overview')
+}
+
+export { loadStyleSheet, defaultThumbnail , isOverview}
