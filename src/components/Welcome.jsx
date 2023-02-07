@@ -2,7 +2,10 @@
 import { openSidebar } from "@ftrack/web-widget";
 import { defaultThumbnail } from "../ftrack_utils.jsx"
 
+
+
 function Welcome(props) {
+
     const session = props.session
     const theme = props.theme
     const selection = props.selection
