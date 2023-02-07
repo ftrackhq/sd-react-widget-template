@@ -1,9 +1,3 @@
-name: S3 Widget Deploy
-on:
-  push:
-    branches:
-      - main
-      - backlog/init-react-template
 jobs:
   job_id:
     permissions:
