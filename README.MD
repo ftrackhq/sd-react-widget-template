@@ -52,7 +52,7 @@ Check [x] one or Both options depending on the widgets type.
 -->
 
 - [ ] **Overview Widget** : *Widget should be installed as Overview widget.  Provides cross project data manipulation.*
-- [ ] **Dashboard Widget**: *Widget should be installed as Dashboard widget.  Provides single Entity type data manipulation.*
+- [x] **Dashboard Widget**: *Widget should be installed as Dashboard widget.  Provides single Entity type data manipulation.*
 
 
 ## 
