@@ -4,11 +4,9 @@ import {useEffect, useState} from 'react';
 import { getEntity , getActiveTheme } from "@ftrack/web-widget";
 import useSession from "./session_context";
 import {SETTINGS} from './config'
-import logo_dark from './assets/ftrack-studio-logo-dark.png';
-import logo_light from './assets/ftrack-studio-logo-light.png';
 
 import { ThreeCircles } from  'react-loader-spinner'
-import {defaultThumbnail, loadStyleSheet, isOverview} from "./ftrack_utils.jsx";
+import {defaultThumbnail, loadStyleSheet, isOverview } from "./ftrack_utils.jsx";
 import Welcome from './components/Welcome.jsx'
 
 import './App.css'
@@ -19,7 +17,9 @@ function sleep(ms) {
 
 
 function App() {
+
   const is_overview = isOverview()
+  console.log(is_overview)
   if (is_overview){
       return <h1 className="warning">Please install this widget as project dashboard</h1>
   }
@@ -27,7 +27,6 @@ function App() {
   const session = useSession();
   let current_entity = getEntity();
   const theme = getActiveTheme()
-  const logo = ((theme === 'light') ? logo_dark : logo_light)
 
   loadStyleSheet(theme)
 
@@ -35,13 +34,11 @@ function App() {
   const [isLoading, setLoading] = useState(false);
 
   function onFtrackWidgetUpdate(ftrack_event){
-      console.log(ftrack_event)
       const entity_query = `select thumbnail_url, name, id from ${ftrack_event.detail.entity.type} where id is ${ftrack_event.detail.entity.id}`
       session.query(entity_query).then((entity)=>{
           const f_entity = entity.data[0]
           setSelection(f_entity)
       })
-
   }
 
   useEffect(()=>{
@@ -57,15 +54,15 @@ function App() {
 
     const render_widget = (
         <div>
-            <Welcome session={session} theme={theme} selection={selection} logo={logo}/>
+            <Welcome session={session} theme={theme} selection={selection}/>
         </div>
     )
 
     return (
         <div>
           {isLoading ? <ThreeCircles
-              height="250"
-              width="250"
+              height="125"
+              width="125"
               color="#935ba2"
               wrapperStyle={{}}
               wrapperClass="spinner"

@@ -1,6 +1,8 @@
 // :copyright: Copyright (c) 2023 ftrack
 import { openSidebar } from "@ftrack/web-widget";
 import { defaultThumbnail } from "../ftrack_utils.jsx"
+import logo_dark from "../assets/ftrack-studio-logo-dark.png";
+import logo_light from "../assets/ftrack-studio-logo-light.png";
 
 
 
@@ -9,7 +11,7 @@ function Welcome(props) {
     const session = props.session
     const theme = props.theme
     const selection = props.selection
-    const logo = props.logo
+    const logo = ((theme === 'light') ? logo_dark : logo_light)
 
     function onEntityClick(selection) {
         openSidebar(selection.__entity_type__, selection.id)
