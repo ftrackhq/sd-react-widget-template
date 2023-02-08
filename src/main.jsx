@@ -1,13 +1,12 @@
 // :copyright: Copyright (c) 2023 ftrack
 
-import React from 'react';
+import React from "react";
 import { Session } from "@ftrack/api";
 import { SessionProvider } from "./session_context";
-import { initialize, getCredentials  } from "@ftrack/web-widget";
+import { initialize, getCredentials } from "@ftrack/web-widget";
 
-import ReactDOM from 'react-dom/client';
-import App from './App';
-
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
 function onWidgetLoad() {
   const credentials = getCredentials();
@@ -44,5 +43,3 @@ function onDomContentLoaded() {
 }
 
 window.addEventListener("DOMContentLoaded", onDomContentLoaded);
-
-
