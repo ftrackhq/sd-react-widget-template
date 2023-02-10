@@ -9,8 +9,8 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 
 function onWidgetLoad() {
-  const credentials = getCredentials();
-  const session = new Session(
+  let credentials = getCredentials();
+  let session = new Session(
     credentials.serverUrl,
     credentials.apiUser,
     credentials.apiKey,

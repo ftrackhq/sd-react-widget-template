@@ -1,7 +1,7 @@
 // :copyright: Copyright (c) 2023 ftrack
 
 import { useEffect, useState } from "react";
-import { getEntity, getActiveTheme } from "@ftrack/web-widget";
+import { getActiveTheme } from "@ftrack/web-widget";
 import useSession from "./session_context";
 import { SETTINGS } from "./config";
 
@@ -15,12 +15,13 @@ import Welcome from "./components/Welcome.jsx";
 
 import "./App.css";
 
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function App() {
-  const is_overview = isOverview();
+  let is_overview = isOverview();
 
   if (is_overview) {
     return (
@@ -30,9 +31,8 @@ function App() {
     );
   }
 
-  const session = useSession();
-  let current_entity = getEntity();
-  const theme = getActiveTheme();
+  let session = useSession();
+  let theme = getActiveTheme();
 
   loadStyleSheet(theme);
 
@@ -44,7 +44,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   function onFtrackWidgetUpdate(ftrack_event) {
-    const entity_query = `select thumbnail_url, name, id \
+    let entity_query = `select thumbnail_url, name, id \
         from ${ftrack_event.detail.entity.type} where id is ${ftrack_event.detail.entity.id}`;
 
     session.query(entity_query).then((entity) => {
@@ -63,7 +63,7 @@ function App() {
     });
   }, [session]);
 
-  const render_widget = (
+  let render_widget = (
     <div>
       <Welcome session={session} theme={theme} selection={selection} />
     </div>

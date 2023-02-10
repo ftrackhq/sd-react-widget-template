@@ -5,10 +5,10 @@ import logo_dark from "../assets/ftrack-studio-logo-dark.png";
 import logo_light from "../assets/ftrack-studio-logo-light.png";
 
 function Welcome(props) {
-  const session = props.session;
-  const theme = props.theme;
-  const selection = props.selection;
-  const logo = theme === "light" ? logo_dark : logo_light;
+  let session = props.session;
+  let theme = props.theme;
+  let selection = props.selection;
+  let logo = theme === "light" ? logo_dark : logo_light;
 
   function onEntityClick(selection) {
     openSidebar(selection.__entity_type__, selection.id);
