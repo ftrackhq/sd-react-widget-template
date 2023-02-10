@@ -48,7 +48,7 @@ function App() {
         from ${ftrack_event.detail.entity.type} where id is ${ftrack_event.detail.entity.id}`;
 
     session.query(entity_query).then((entity) => {
-      const f_entity = entity.data[0];
+      let f_entity = entity.data[0];
       setSelection(f_entity);
     });
   }

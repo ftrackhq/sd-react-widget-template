@@ -21,8 +21,8 @@ function onWidgetLoad() {
 
   session.initializing
     .then(() => {
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      root.render(
+      const ROOT = ReactDOM.createRoot(document.getElementById("root"));
+      ROOT.render(
         <SessionProvider value={session}>
           <App />
         </SessionProvider>
