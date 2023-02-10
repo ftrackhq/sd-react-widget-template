@@ -21,7 +21,7 @@ function sleep(ms) {
 
 function App() {
   const is_overview = isOverview();
-  console.log(is_overview);
+
   if (is_overview) {
     return (
       <h1 className="warning">
@@ -41,10 +41,12 @@ function App() {
     id: "",
     __entity_type__: "",
   });
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   function onFtrackWidgetUpdate(ftrack_event) {
-    const entity_query = `select thumbnail_url, name, id from ${ftrack_event.detail.entity.type} where id is ${ftrack_event.detail.entity.id}`;
+    const entity_query = `select thumbnail_url, name, id \
+        from ${ftrack_event.detail.entity.type} where id is ${ftrack_event.detail.entity.id}`;
+
     session.query(entity_query).then((entity) => {
       const f_entity = entity.data[0];
       setSelection(f_entity);
@@ -52,12 +54,12 @@ function App() {
   }
 
   useEffect(() => {
-    setLoading(true);
+    setIsLoading(true);
     window.addEventListener("ftrackWidgetUpdate", onFtrackWidgetUpdate);
 
     // FOR SPINNER DEMO PURPOSES ONLY
     sleep(SETTINGS.spinner_timeout).then(() => {
-      setLoading(false);
+      setIsLoading(false);
     });
   }, [session]);
 
