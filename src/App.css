@@ -1,0 +1,15 @@
+/* :copyright: Copyright (c) 2023 ftrack */
+
+#root {
+  text-align: center;
+}
+
+.logo {
+  height: 15em;
+  padding: 0em;
+}
+
+.warning {
+  color: red;
+  font-weight: bold;
+}
