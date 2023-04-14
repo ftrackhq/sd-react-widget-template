@@ -150,4 +150,6 @@ Open [the above address](http://localhost:3000) into a ftrack project's dashboar
 # Note
 The template code has been bootstrapped from a [vite](https://vitejs.dev/guide/) application.
 
+Browser support [disclaimer](https://help.ftrack.com/en/articles/6009712-officially-supported-browsers) 
+
 &copy; ftrack
