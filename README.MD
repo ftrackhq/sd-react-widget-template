@@ -10,7 +10,7 @@ Provide a short description of the widget and high level functionality.>
 > Due to the required ftrack credentials this widget does not work as standalone, but only from within ftrack.
 
 ## Demo
-A working demo is available at this [link](https://storage.googleapis.com/sd-public-widget-deployment/<PROJECT-NAME>/index.html)
+A working demo is available at this [link](https://storage.googleapis.com/sd-public-widget-deployment/sd-react-widget-template/index.html)
 
 ## Example
 <!---
